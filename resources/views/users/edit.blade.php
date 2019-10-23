@@ -17,7 +17,7 @@
                         <h2>Editar usuario</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-warning" href="{{ route('home') }}">Regresar</a>
+                        <!-- <a class="btn btn-warning" href="{{ route('home') }}">Regresar</a> -->
                         <br><br>
                     </div>
 

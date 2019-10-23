@@ -30,7 +30,7 @@ class EditUser extends FormRequest
             'last_name' => 'required',
             'document' => ['required', Rule::unique('users')->ignore($this->route('user'))],
             'email' => ['required', Rule::unique('users')->ignore($this->route('user'))],
-            'phone' => 'required',
+            'phone' => 'required|numeric',
         ];
     }
 
@@ -39,13 +39,13 @@ class EditUser extends FormRequest
         $document = $this->input('document');
         $email = $this->input('email');
         return [
-            'document.unique' => "La cédula $document ya está registrada en el sistema",
-            'document.required' => "El campo cédula es obligatorio",
-            'document.numeric' => "El campo cédula debe contener sólo números",
-            'email.unique' => "El correo $email ya está registrado en el sistema",
-            'email.email' => "El correo ingresado no es válido",
-            'phone.number' => "El campo teléfono debe contener sólo números",
-            'phone.required' => "El campo teléfono es obligatorio",
+            'document.unique' => "La cédula $document ya está registrada",
+            'document.required' => "La cédula es obligatorio",
+            'document.numeric' => "La cédula debe contener sólo números",
+            'email.unique' => "El correo $email ya está registrado",
+            'email.email' => "El correo no es válido",
+            'phone.number' => "El teléfono debe contener sólo números",
+            'phone.required' => "El teléfono es obligatorio",
         ];
     }
 }
